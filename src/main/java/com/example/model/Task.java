@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by iMac on 23.11.2017.
  */
 public class Task {
+    public Long id;
     public String name;
     public String discription;
     public Long category;
@@ -16,6 +17,14 @@ public class Task {
     public Date dateEnd;
 
     public Task() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -85,7 +94,8 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", discription='" + discription + '\'' +
                 ", category=" + category +
                 ", priority=" + priority +

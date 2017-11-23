@@ -1,6 +1,10 @@
 package com.example.controller;
 
+import com.example.model.Task;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by iMac on 23.11.2017.
@@ -10,8 +14,10 @@ import org.springframework.web.bind.annotation.*;
 public class TaskController {
 
     @GetMapping
-    public String getTask() {
-        return "this get mapping";
+    public List<Task> getTask() {
+        Task task = new Task();
+        List<Task> list = Arrays.asList(task);
+        return list;
     }
 
     @PutMapping(value = "/{id}")
@@ -20,8 +26,8 @@ public class TaskController {
     }
 
     @PostMapping
-    public String createTask() {
-        return "this post mapping";
+    public Task createTask() {
+        return  new Task();
     }
 
     @DeleteMapping(value = "/{id}")
