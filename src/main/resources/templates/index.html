@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var prefix = '/task';
+
+        var RestGet = function() {
+            $.ajax({
+                type: 'GET',
+                url:  prefix,
+                dataType: 'json',
+                async: true,
+                success: function(result) {
+                    alert(result);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.status + ' ' + jqXHR.responseText);
+                }
+            });
+        }
+
+        var RestPut = function() {
+            var JSONObject= {
+                'name': 'name',
+                'discription': 'discription',
+                'category': '1',
+                'priority': '1',
+                'important': '1',
+                'quickly': '1',
+                'dateBegin': 'name',
+                'dateEnd': 'name'
+
+            };
+
+            $.ajax({
+                type: 'PUT',
+                url:  prefix+'/1',
+                contentType: 'application/json; charset=utf-8',
+//                data: JSON.stringify(JSONObject),
+                dataType: 'json',
+                async: true,
+                success: function(result) {
+                    alert(result);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.status + ' ' + jqXHR.responseText);
+                }
+            });
+        }
+
+        var RestPost = function() {
+            $.ajax({
+                type: 'POST',
+                url:  prefix,
+                dataType: 'json',
+                async: true,
+                success: function(result) {
+                    alert(result);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.status + ' ' + jqXHR.responseText);
+                }
+            });
+        }
+
+        var RestDelete = function() {
+            $.ajax({
+                type: 'DELETE',
+                url:  prefix + '/1',
+                dataType: 'json',
+                async: true,
+                success: function(result) {
+                    alert(result);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.status + ' ' + jqXHR.responseText);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<h3>Это простой пример использования REST c помощью Ajax</h3>
+
+<button type="button" onclick="RestGet()">Метод GET</button>
+<button type="button" onclick="RestPost()">Метод POST</button>
+<button type="button" onclick="RestDelete()">Метод DELETE</button>
+<button type="button" onclick="RestPut()">Метод PUT</button>
+</body>
+</html>
