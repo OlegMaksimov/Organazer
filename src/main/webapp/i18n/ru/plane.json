@@ -1,0 +1,25 @@
+
+{
+    "organazerApp": {
+        "plane" : {
+            "home": {
+                "title": "Planes",
+                "createLabel": "Создать новый Plane",
+                "createOrEditLabel": "Создать или отредактировать Plane"
+            },
+            "created": "Новый Plane создан с идентификатором {{ param }}",
+            "updated": "Plane обновлен с идентификатором {{ param }}",
+            "deleted": "Plane удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Plane {{ id }}?"
+            },
+            "detail": {
+                "title": "Plane"
+            },
+            "dateStart": "Date Start",
+            "dateEnd": "Date End",
+            "discription": "Discription",
+            "task": "Task"
+        }
+    }
+}

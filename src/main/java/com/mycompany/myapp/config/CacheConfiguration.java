@@ -43,6 +43,14 @@ public class CacheConfiguration {
             cm.createCache(com.mycompany.myapp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Task.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Task.class.getName() + ".tasks", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Task.class.getName() + ".subTasks", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Plane.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Category.class.getName() + ".categoryBalances", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Category.class.getName() + ".categoryTasks", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.BalanceWheel.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

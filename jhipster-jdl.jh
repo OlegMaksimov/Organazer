@@ -2,14 +2,12 @@ entity Task {
 	id 				Long
     name 			String
     discription 	String
-    category 		Category
-    dateStart		Date
-    dateEnd			Date
-    prioritet		Int
-    time			Time
+    dateStart		ZonedDateTime
+    dateEnd			ZonedDateTime
+    prioritet		Long
+    time			Double
     progres			Double
     status			Status
-    subtask			Task
     impotment		Boolean
     quick			Boolean
     repeat			Repeat
@@ -17,12 +15,10 @@ entity Task {
 
 entity Plane {
 	id				Long
-    dateStart		Date
-    dateEnd			Date
-    taskMap			Map
+    dateStart		ZonedDateTime
+    dateEnd			ZonedDateTime
     discription 	String
-    subPlane		Plane
-}
+   }
 
 entity Category {
 	id				Long
@@ -33,20 +29,21 @@ entity Category {
 
 entity BalanceWheel {
 	id				Long
-    date			Date
-    category		Category
-     valueMap		Map
+    date			ZonedDateTime
+    }
+
+relationship OneToMany {
+	Category{categoryBalance} to BalanceWheel
+}
+relationship OneToMany {
+	Category{categoryTask} to Task
 }
 
 relationship OneToMany {
-	BalanceWheel to Category
+	Task{task} to Plane
 }
 relationship OneToMany {
-	Task to Category
-}
-
-relationship OneToMany {
-	Plane to Task
+	Task{subTask} to Task
 }
 
 enum Status {

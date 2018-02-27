@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "categoryBalance",
+            "otherEntityName": "balanceWheel",
+            "otherEntityRelationshipName": "category"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "categoryTask",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "category"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentment",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180227073051",
+    "entityTableName": "category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

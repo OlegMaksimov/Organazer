@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPlaneLabel" jhiTranslate="organazerApp.plane.home.createOrEditLabel">Create or edit a Plane</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!plane.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="plane.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="organazerApp.plane.dateStart" for="field_dateStart">Date Start</label>
+            <div class="d-flex">
+                <input id="field_dateStart" type="datetime-local" class="form-control" name="dateStart" [(ngModel)]="plane.dateStart"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="organazerApp.plane.dateEnd" for="field_dateEnd">Date End</label>
+            <div class="d-flex">
+                <input id="field_dateEnd" type="datetime-local" class="form-control" name="dateEnd" [(ngModel)]="plane.dateEnd"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="organazerApp.plane.discription" for="field_discription">Discription</label>
+            <input type="text" class="form-control" name="discription" id="field_discription"
+                [(ngModel)]="plane.discription" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="organazerApp.plane.task" for="field_task">Task</label>
+            <select class="form-control" id="field_task" name="task" [(ngModel)]="plane.task" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="taskOption.id === plane.task?.id ? plane.task : taskOption" *ngFor="let taskOption of tasks; trackBy: trackTaskById">{{taskOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
