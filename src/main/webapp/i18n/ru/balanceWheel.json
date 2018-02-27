@@ -1,0 +1,23 @@
+
+{
+    "organazerApp": {
+        "balanceWheel" : {
+            "home": {
+                "title": "Balance Wheels",
+                "createLabel": "Создать новый Balance Wheel",
+                "createOrEditLabel": "Создать или отредактировать Balance Wheel"
+            },
+            "created": "Новый Balance Wheel создан с идентификатором {{ param }}",
+            "updated": "Balance Wheel обновлен с идентификатором {{ param }}",
+            "deleted": "Balance Wheel удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Balance Wheel {{ id }}?"
+            },
+            "detail": {
+                "title": "Balance Wheel"
+            },
+            "date": "Date",
+            "category": "Category"
+        }
+    }
+}

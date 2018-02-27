@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span jhiTranslate="organazerApp.task.home.title">Tasks</span>
+        <button class="btn btn-primary float-right jh-create-entity create-task" [routerLink]="['/', { outlets: { popup: ['task-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="organazerApp.task.home.createLabel">
+            Create new Task
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tasks">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="organazerApp.task.name">Name</span></th>
+            <th><span jhiTranslate="organazerApp.task.discription">Discription</span></th>
+            <th><span jhiTranslate="organazerApp.task.dateStart">Date Start</span></th>
+            <th><span jhiTranslate="organazerApp.task.dateEnd">Date End</span></th>
+            <th><span jhiTranslate="organazerApp.task.prioritet">Prioritet</span></th>
+            <th><span jhiTranslate="organazerApp.task.time">Time</span></th>
+            <th><span jhiTranslate="organazerApp.task.progres">Progres</span></th>
+            <th><span jhiTranslate="organazerApp.task.status">Status</span></th>
+            <th><span jhiTranslate="organazerApp.task.impotment">Impotment</span></th>
+            <th><span jhiTranslate="organazerApp.task.quick">Quick</span></th>
+            <th><span jhiTranslate="organazerApp.task.repeat">Repeat</span></th>
+            <th><span jhiTranslate="organazerApp.task.task">Task</span></th>
+            <th><span jhiTranslate="organazerApp.task.category">Category</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let task of tasks ;trackBy: trackId">
+                <td><a [routerLink]="['../task', task.id ]">{{task.id}}</a></td>
+                <td>{{task.name}}</td>
+                <td>{{task.discription}}</td>
+                <td>{{task.dateStart | date:'medium'}}</td>
+                <td>{{task.dateEnd | date:'medium'}}</td>
+                <td>{{task.prioritet}}</td>
+                <td>{{task.time}}</td>
+                <td>{{task.progres}}</td>
+                <td jhiTranslate="{{'organazerApp.Status.' + task.status}}">{{task.status}}</td>
+                <td>{{task.impotment}}</td>
+                <td>{{task.quick}}</td>
+                <td jhiTranslate="{{'organazerApp.Repeat.' + task.repeat}}">{{task.repeat}}</td>
+                <td>
+                    <div *ngIf="task.task">
+                        <a [routerLink]="['../task', task.task?.id ]" >{{task.task?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="task.category">
+                        <a [routerLink]="['../category', task.category?.id ]" >{{task.category?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../task', task.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'task/'+ task.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'task/'+ task.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

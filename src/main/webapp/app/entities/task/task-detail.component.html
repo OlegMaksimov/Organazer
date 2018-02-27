@@ -1,0 +1,78 @@
+
+<div *ngIf="task">
+    <h2><span jhiTranslate="organazerApp.task.detail.title">Task</span> {{task.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="organazerApp.task.name">Name</span></dt>
+        <dd>
+            <span>{{task.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.discription">Discription</span></dt>
+        <dd>
+            <span>{{task.discription}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.dateStart">Date Start</span></dt>
+        <dd>
+            <span>{{task.dateStart | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.dateEnd">Date End</span></dt>
+        <dd>
+            <span>{{task.dateEnd | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.prioritet">Prioritet</span></dt>
+        <dd>
+            <span>{{task.prioritet}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.time">Time</span></dt>
+        <dd>
+            <span>{{task.time}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.progres">Progres</span></dt>
+        <dd>
+            <span>{{task.progres}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'organazerApp.Status.' + task.status}}">{{task.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.impotment">Impotment</span></dt>
+        <dd>
+            <span>{{task.impotment}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.quick">Quick</span></dt>
+        <dd>
+            <span>{{task.quick}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.repeat">Repeat</span></dt>
+        <dd>
+            <span jhiTranslate="{{'organazerApp.Repeat.' + task.repeat}}">{{task.repeat}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.task">Task</span></dt>
+        <dd>
+            <div *ngIf="task.task">
+                <a [routerLink]="['/task', task.task?.id]">{{task.task?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.task.category">Category</span></dt>
+        <dd>
+            <div *ngIf="task.category">
+                <a [routerLink]="['/category', task.category?.id]">{{task.category?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'task/'+ task.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

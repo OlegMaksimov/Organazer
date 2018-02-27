@@ -1,0 +1,40 @@
+
+<div *ngIf="plane">
+    <h2><span jhiTranslate="organazerApp.plane.detail.title">Plane</span> {{plane.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="organazerApp.plane.dateStart">Date Start</span></dt>
+        <dd>
+            <span>{{plane.dateStart | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.plane.dateEnd">Date End</span></dt>
+        <dd>
+            <span>{{plane.dateEnd | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.plane.discription">Discription</span></dt>
+        <dd>
+            <span>{{plane.discription}}</span>
+        </dd>
+        <dt><span jhiTranslate="organazerApp.plane.task">Task</span></dt>
+        <dd>
+            <div *ngIf="plane.task">
+                <a [routerLink]="['/task', plane.task?.id]">{{plane.task?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'plane/'+ plane.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,36 @@
+
+{
+    "organazerApp": {
+        "task" : {
+            "home": {
+                "title": "Tasks",
+                "createLabel": "Создать новый Task",
+                "createOrEditLabel": "Создать или отредактировать Task"
+            },
+            "created": "Новый Task создан с идентификатором {{ param }}",
+            "updated": "Task обновлен с идентификатором {{ param }}",
+            "deleted": "Task удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Task {{ id }}?"
+            },
+            "detail": {
+                "title": "Task"
+            },
+            "name": "Name",
+            "discription": "Discription",
+            "dateStart": "Date Start",
+            "dateEnd": "Date End",
+            "prioritet": "Prioritet",
+            "time": "Time",
+            "progres": "Progres",
+            "status": "Status",
+            "impotment": "Impotment",
+            "quick": "Quick",
+            "repeat": "Repeat",
+            "task": "Task",
+            "task": "Task",
+            "subTask": "Sub Task",
+            "category": "Category"
+        }
+    }
+}

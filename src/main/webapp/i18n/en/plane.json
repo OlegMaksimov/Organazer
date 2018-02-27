@@ -1,0 +1,25 @@
+
+{
+    "organazerApp": {
+        "plane" : {
+            "home": {
+                "title": "Planes",
+                "createLabel": "Create a new Plane",
+                "createOrEditLabel": "Create or edit a Plane"
+            },
+            "created": "A new Plane is created with identifier {{ param }}",
+            "updated": "A Plane is updated with identifier {{ param }}",
+            "deleted": "A Plane is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Plane {{ id }}?"
+            },
+            "detail": {
+                "title": "Plane"
+            },
+            "dateStart": "Date Start",
+            "dateEnd": "Date End",
+            "discription": "Discription",
+            "task": "Task"
+        }
+    }
+}

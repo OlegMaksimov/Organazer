@@ -1,0 +1,26 @@
+
+{
+    "organazerApp": {
+        "category" : {
+            "home": {
+                "title": "Categories",
+                "createLabel": "Создать новый Category",
+                "createOrEditLabel": "Создать или отредактировать Category"
+            },
+            "created": "Новый Category создан с идентификатором {{ param }}",
+            "updated": "Category обновлен с идентификатором {{ param }}",
+            "deleted": "Category удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "name": "Name",
+            "discription": "Discription",
+            "contentment": "Contentment",
+            "categoryBalance": "Category Balance",
+            "categoryTask": "Category Task"
+        }
+    }
+}

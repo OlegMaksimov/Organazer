@@ -1,0 +1,11 @@
+{
+    "organazerApp": {
+        "Repeat" : {
+            "null": "",
+            "NOREPEAT": "NOREPEAT",
+            "DAYLY": "DAYLY",
+            "WEEKLY": "WEEKLY",
+            "MONTHLY": "MONTHLY"
+        }
+    }
+}

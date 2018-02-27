@@ -1,0 +1,57 @@
+entity Task {
+	id 				Long
+    name 			String
+    discription 	String
+    dateStart		ZonedDateTime
+    dateEnd			ZonedDateTime
+    prioritet		Long
+    time			Double
+    progres			Double
+    status			Status
+    impotment		Boolean
+    quick			Boolean
+    repeat			Repeat
+}
+
+entity Plane {
+	id				Long
+    dateStart		ZonedDateTime
+    dateEnd			ZonedDateTime
+    discription 	String
+   }
+
+entity Category {
+	id				Long
+    name 			String
+    discription 	String
+    contentment		Long
+}
+
+entity BalanceWheel {
+	id				Long
+    date			ZonedDateTime
+    }
+
+relationship OneToMany {
+	Category{categoryBalance} to BalanceWheel
+}
+relationship OneToMany {
+	Category{categoryTask} to Task
+}
+
+relationship OneToMany {
+	Task{task} to Plane
+}
+relationship OneToMany {
+	Task{subTask} to Task
+}
+
+enum Status {
+	INPROGRESS, OPEN, CLOSE, DELETE, SHEDULED
+}
+
+enum Repeat {
+	NOREPEAT, DAYLY, WEEKLY, MONTHLY
+}
+
+

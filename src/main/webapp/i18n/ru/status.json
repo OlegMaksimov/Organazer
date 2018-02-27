@@ -1,0 +1,12 @@
+{
+    "organazerApp": {
+        "Status" : {
+            "null": "",
+            "INPROGRESS": "INPROGRESS",
+            "OPEN": "OPEN",
+            "CLOSE": "CLOSE",
+            "DELETE": "DELETE",
+            "SHEDULED": "SHEDULED"
+        }
+    }
+}

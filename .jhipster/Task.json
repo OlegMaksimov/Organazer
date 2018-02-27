@@ -1,0 +1,83 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "task",
+            "otherEntityName": "plane",
+            "otherEntityRelationshipName": "task"
+        },
+        {
+            "relationshipName": "task",
+            "otherEntityName": "task",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "subTask",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "task"
+        },
+        {
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateStart",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateEnd",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "prioritet",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "progres",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "INPROGRESS,OPEN,CLOSE,DELETE,SHEDULED"
+        },
+        {
+            "fieldName": "impotment",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "quick",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "repeat",
+            "fieldType": "Repeat",
+            "fieldValues": "NOREPEAT,DAYLY,WEEKLY,MONTHLY"
+        }
+    ],
+    "changelogDate": "20180227073049",
+    "entityTableName": "task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}
